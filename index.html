@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrEP – Prophylaxie Pré-Exposition VIH | TravelDoctor.ch</title>
+    <meta name="description" content="Consultations PrEP (Prophylaxie Pré-Exposition contre le VIH) à Lausanne et Bulle. Prise en charge remboursée par l'assurance de base. Prenez rendez-vous chez TravelDoctor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #12AD98;
+            --teal-dark: #0E9683;
+            --teal-deeper: #0A7A6B;
+            --yellow: #FAD500;
+            --yellow-light: #FFF8D6;
+            --gray-light: #F5F5F5;
+            --gray-text: #666666;
+            --gray-dark: #333333;
+            --white: #FFFFFF;
+            --shadow-soft: 0 4px 24px rgba(18, 173, 152, 0.10);
+            --shadow-card: 0 2px 16px rgba(0,0,0,0.07);
+            --radius: 12px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--gray-text);
+            line-height: 1.7;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ─── HEADER ─── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 0 2rem;
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .header-logo img {
+            height: 42px;
+            width: auto;
+        }
+        .header-nav { display: flex; align-items: center; gap: 1.2rem; }
+        .header-nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--gray-dark);
+            letter-spacing: 0.03em;
+            transition: color 0.2s;
+        }
+        .header-nav a:hover { color: var(--teal); }
+        .btn-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--teal);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: background 0.25s, transform 0.2s;
+        }
+        .btn-header:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #0A7A6B 0%, #12AD98 50%, #18C4AB 100%);
+            color: var(--white);
+            padding: 5rem 2rem 4rem;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(250,213,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 8px; height: 8px;
+            background: var(--yellow);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.3); }
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            color: var(--white);
+        }
+        .hero h1 span { color: var(--yellow); }
+        .hero-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.92;
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--yellow);
+            color: var(--gray-dark);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(250,213,0,0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(250,213,0,0.45); }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            border: 2px solid rgba(255,255,255,0.4);
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+        /* Hero visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .shield-graphic {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+        .shield-icon {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 8px 32px rgba(0,0,0,0.15));
+        }
+
+        /* ─── INSURANCE BANNER ─── */
+        .insurance-banner {
+            background: var(--yellow);
+            padding: 1.2rem 2rem;
+            text-align: center;
+        }
+        .insurance-banner p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--gray-dark);
+            letter-spacing: 0.02em;
+        }
+        .insurance-banner p svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 0.4rem;
+        }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            padding: 5rem 2rem;
+        }
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-label {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--teal);
+            background: rgba(18,173,152,0.08);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--teal);
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 680px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ─── WHAT IS PrEP ─── */
+        .what-prep { background: var(--white); }
+        .what-prep-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .what-prep-content .highlight-box {
+            background: var(--gray-light);
+            border-left: 4px solid var(--teal);
+            padding: 1.5rem 1.8rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.5rem 0;
+            font-size: 0.98rem;
+        }
+        .what-prep-content .highlight-box strong {
+            color: var(--gray-dark);
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stat-card {
+            background: var(--white);
+            border: 1px solid rgba(18,173,152,0.15);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            border-color: var(--teal);
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-3px);
+        }
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--teal);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            line-height: 1.4;
+        }
+
+        /* ─── WHO IS IT FOR ─── */
+        .who-section { background: var(--gray-light); }
+        .who-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .who-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s;
+        }
+        .who-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .who-card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(18,173,152,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+        .who-card-icon svg { width: 26px; height: 26px; color: var(--teal); }
+        .who-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            margin-bottom: 0.7rem;
+        }
+        .who-card p { font-size: 0.92rem; line-height: 1.7; }
+
+        /* ─── PROCESS ─── */
+        .process-section { background: var(--white); }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .process-step {
+            position: relative;
+            text-align: center;
+            padding: 2rem 1.2rem;
+        }
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--teal);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 0 auto 1.2rem;
+            box-shadow: 0 4px 16px rgba(18,173,152,0.25);
+        }
+        .process-step h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            margin-bottom: 0.6rem;
+        }
+        .process-step p { font-size: 0.88rem; line-height: 1.65; }
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 28px;
+            right: -0.75rem;
+            width: calc(100% - 56px);
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--teal) 0, var(--teal) 6px, transparent 6px, transparent 12px);
+            opacity: 0.3;
+            transform: translateX(50%);
+        }
+
+        /* ─── CHECKLIST ─── */
+        .checklist { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .checklist li strong { color: var(--gray-dark); }
+        .check-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .check-icon svg { width: 14px; height: 14px; color: var(--white); }
+
+        /* ─── FAQ ─── */
+        .faq-section { background: var(--gray-light); }
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.3rem 1.5rem;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            transition: color 0.2s;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .faq-question:hover { color: var(--teal); }
+        .faq-toggle {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(18,173,152,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            margin-left: 1rem;
+        }
+        .faq-toggle svg {
+            width: 14px; height: 14px;
+            color: var(--teal);
+            transition: transform 0.3s;
+        }
+        .faq-item.open .faq-toggle { background: var(--teal); }
+        .faq-item.open .faq-toggle svg { color: var(--white); transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem;
+            font-size: 0.93rem;
+            line-height: 1.8;
+        }
+
+        /* ─── CONTACT CTA ─── */
+        .contact-section {
+            background: linear-gradient(135deg, #0A7A6B 0%, #12AD98 60%, #18C4AB 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .contact-section .section-title { color: var(--white); }
+        .contact-section .section-label {
+            color: var(--white);
+            background: rgba(255,255,255,0.15);
+        }
+        .contact-section p {
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .contact-card {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem 3rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            margin-top: 1rem;
+        }
+        .contact-card .email-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-text);
+            margin-bottom: 0.6rem;
+        }
+        .contact-card .email-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--teal);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-card .email-link:hover { color: var(--teal-dark); }
+        .contact-card .email-note {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            margin-top: 0.8rem;
+        }
+        .contact-locations {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .contact-location {
+            text-align: center;
+        }
+        .contact-location h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+        .contact-location p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .contact-location a {
+            color: var(--yellow);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-location a:hover { text-decoration: underline; }
+
+        /* ─── FOOTER ─── */
+        .site-footer {
+            background: var(--gray-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 2rem 2rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+        .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .footer-links a {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--white); }
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ─── WHATSAPP BUTTON ─── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55); }
+        .whatsapp-float svg { width: 32px; height: 32px; color: var(--white); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { margin-left: auto; margin-right: auto; }
+            .hero-cta { justify-content: center; }
+            .hero-visual { order: -1; }
+            .shield-graphic { width: 220px; height: 220px; }
+            .what-prep-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .process-step::after { display: none; }
+        }
+        @media (max-width: 600px) {
+            .hero { padding: 3rem 1.5rem 2.5rem; }
+            .section { padding: 3rem 1.5rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .header-nav .nav-text { display: none; }
+            .contact-card { padding: 2rem 1.5rem; width: 100%; }
+            .contact-card .email-link { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="https://traveldoctor.ch" class="header-logo">
+            <img src="https://traveldoctor.ch/wp-content/uploads/2025/06/Travel_Doctor_Logos_Travel-doctor-horizontal.png" alt="TravelDoctor.ch">
+        </a>
+        <nav class="header-nav">
+            <a href="https://traveldoctor.ch" class="nav-text">Accueil</a>
+            <a href="#faq" class="nav-text">FAQ</a>
+            <a href="#contact" class="btn-header">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
+                Prendre RDV
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Membre du réseau SwissPrEPared
+            </div>
+            <h1>Consultations <span>PrEP</span> pour la prévention du VIH</h1>
+            <p class="hero-text">
+                La PrEP (Prophylaxie Pré-Exposition) est un traitement préventif hautement efficace contre le VIH. Notre équipe spécialisée vous accompagne dans votre démarche, du bilan initial au suivi régulier.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
+                    Nous contacter
+                </a>
+                <a href="#comprendre" class="btn-secondary">En savoir plus ↓</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="shield-graphic">
+                <svg class="shield-icon" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Shield shape -->
+                    <path d="M100 10 L180 50 L180 120 C180 170 140 200 100 215 C60 200 20 170 20 120 L20 50 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                    <path d="M100 25 L168 58 L168 118 C168 160 134 188 100 202 C66 188 32 160 32 118 L32 58 Z" fill="rgba(255,255,255,0.08)"/>
+                    <!-- Check mark -->
+                    <path d="M72 112 L92 132 L132 88" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+                    <!-- Plus/cross (medical) -->
+                    <rect x="90" y="54" width="20" height="20" rx="3" fill="rgba(250,213,0,0.8)"/>
+                    <rect x="95" y="57" width="10" height="14" rx="1" fill="white"/>
+                    <rect x="92" y="61.5" width="16" height="5" rx="1" fill="white"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INSURANCE BANNER -->
+<div class="insurance-banner">
+    <p>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Depuis le 1er juillet 2024, la PrEP est remboursée par l'assurance maladie de base (AOS) en Suisse.
+    </p>
+</div>
+
+<!-- WHAT IS PrEP -->
+<section class="section what-prep" id="comprendre">
+    <div class="section-inner">
+        <div class="what-prep-grid">
+            <div class="what-prep-content">
+                <span class="section-label">Comprendre</span>
+                <h2 class="section-title">Qu'est-ce que la PrEP ?</h2>
+                <p>La PrEP (<strong>P</strong>rophylaxie <strong>Pr</strong>é-<strong>E</strong>xposition) est un traitement médicamenteux destiné aux personnes séronégatives qui souhaitent se protéger contre l'infection par le VIH.</p>
+                <div class="highlight-box">
+                    <strong>Efficacité prouvée :</strong> lorsqu'elle est prise correctement, la PrEP réduit le risque d'infection par le VIH de plus de 99 %.
+                </div>
+                <p>Le médicament utilisé est une combinaison d'emtricitabine et de ténofovir, pris sous forme de comprimé. Il peut être pris en continu (un comprimé par jour) ou « à la demande » selon un schéma défini avant et après un rapport à risque.</p>
+            </div>
+            <div class="what-prep-stats">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">>99%</div>
+                        <div class="stat-label">Efficacité contre le VIH</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">AOS</div>
+                        <div class="stat-label">Remboursé par l'assurance de base</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Modes de prise possibles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHO IS IT FOR -->
+<section class="section who-section" id="pour-qui">
+    <div class="section-inner">
+        <span class="section-label">Pour qui ?</span>
+        <h2 class="section-title">La PrEP pourrait vous convenir si...</h2>
+        <p class="section-subtitle">La PrEP s'adresse aux personnes séronégatives exposées à un risque accru d'infection par le VIH. Elle peut être envisagée dans les situations suivantes :</p>
+        <div class="who-cards">
+            <div class="who-card">
+                <div class="who-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h3>Rapports sans préservatif</h3>
+                <p>Vous avez des rapports sexuels sans préservatif avec des partenaires dont le statut VIH est inconnu ou positif (sans traitement suppresseur).</p>
+            </div>
+            <div class="who-card">
+                <div class="who-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Antécédent d'IST récente</h3>
+                <p>Vous avez eu une infection sexuellement transmissible (syphilis, gonorrhée, chlamydia) au cours des 12 derniers mois.</p>
+            </div>
+            <div class="who-card">
+                <div class="who-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3>Voyages en zones à risque</h3>
+                <p>Vous voyagez dans des régions à haute prévalence du VIH et pourriez avoir des contacts sexuels sur place.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="demarche">
+    <div class="section-inner">
+        <span class="section-label">Votre parcours</span>
+        <h2 class="section-title">Comment se déroule la prise en charge ?</h2>
+        <p class="section-subtitle">Un accompagnement médical structuré pour démarrer et poursuivre la PrEP en toute sécurité.</p>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Prise de contact</h3>
+                <p>Contactez-nous par e-mail pour planifier votre première consultation PrEP.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Bilan initial</h3>
+                <p>Consultation médicale avec évaluation des risques, test VIH, dépistage IST et bilan sanguin (fonction rénale).</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Prescription</h3>
+                <p>Si la PrEP est indiquée, prescription du traitement et choix du schéma de prise (continu ou à la demande).</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Suivi régulier</h3>
+                <p>Contrôles trimestriels avec test VIH, dépistage IST et suivi de la fonction rénale pour garantir votre sécurité.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="section who-section" id="expertise">
+    <div class="section-inner">
+        <span class="section-label">Notre expertise</span>
+        <h2 class="section-title">Pourquoi choisir TravelDoctor pour la PrEP ?</h2>
+        <p class="section-subtitle">Notre équipe combine une expertise en infectiologie et en santé sexuelle, avec une expérience concrète dans la prise en charge de la PrEP.</p>
+        <ul class="checklist">
+            <li>
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><strong>Médecin spécialiste en infectiologie (FMH)</strong> et ancien responsable du Centre de Vaccination et Médecine des Voyages d'Unisanté, Lausanne.</span>
+            </li>
+            <li>
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><strong>Infirmière avec plus de 16 ans d'expérience</strong> en dépistage et prévention des IST et du VIH à Unisanté.</span>
+            </li>
+            <li>
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><strong>Membre du réseau SwissPrEPared</strong> — le programme national suisse de suivi de la PrEP.</span>
+            </li>
+            <li>
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><strong>Deux cabinets accessibles</strong> à Lausanne (Centre médical S-Santé) et à Bulle (Cabinet Médical La Tour), avec possibilité de téléconsultation.</span>
+            </li>
+            <li>
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span><strong>Environnement bienveillant et sans jugement</strong> — un espace confidentiel où vous pouvez poser toutes vos questions librement.</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="section-inner">
+        <div style="text-align:center; margin-bottom: 2.5rem;">
+            <span class="section-label">Questions fréquentes</span>
+            <h2 class="section-title" style="max-width:600px; margin: 0.5rem auto 0;">Tout savoir sur la PrEP</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    1. La PrEP est-elle remboursée en Suisse ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    Oui. Depuis le <strong>1er juillet 2024</strong>, la PrEP (emtricitabine/ténofovir) est prise en charge par l'assurance obligatoire des soins (AOS) en Suisse. Cela inclut le médicament ainsi que les examens de suivi nécessaires. La quote-part et la franchise habituelles s'appliquent.
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    2. Comment prend-on la PrEP ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    Il existe deux schémas de prise :<br><br>
+                    <strong>En continu :</strong> un comprimé par jour, tous les jours. Ce schéma convient aux personnes ayant une activité sexuelle régulière.<br><br>
+                    <strong>À la demande :</strong> deux comprimés entre 2 et 24 heures avant un rapport, puis un comprimé 24h après et un autre 48h après le premier comprimé. Ce schéma est réservé aux hommes ayant des rapports avec des hommes (HSH) dont l'activité sexuelle est occasionnelle. Votre médecin vous aidera à choisir le schéma le plus adapté.
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    3. La PrEP a-t-elle des effets secondaires ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    La PrEP est généralement bien tolérée. Certaines personnes peuvent ressentir des effets légers en début de traitement (nausées, maux de tête, fatigue) qui disparaissent habituellement en quelques semaines. Un suivi régulier de la fonction rénale est effectué pour garantir la sécurité du traitement à long terme.
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    4. La PrEP protège-t-elle contre les autres IST ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    Non. La PrEP protège uniquement contre le VIH. Elle ne protège pas contre les autres infections sexuellement transmissibles (syphilis, gonorrhée, chlamydia, hépatite, etc.). C'est pourquoi un <strong>dépistage régulier des IST</strong> fait partie intégrante du suivi PrEP, et l'utilisation du préservatif reste recommandée.
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    5. À quelle fréquence dois-je revenir en consultation ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    Le suivi est en général <strong>trimestriel</strong> (tous les 3 mois). Chaque visite comprend un test VIH, un dépistage des IST, un contrôle de la fonction rénale et un échange sur votre expérience avec le traitement. Ce suivi régulier est essentiel pour votre sécurité et est remboursé par l'assurance.
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    6. Puis-je commencer la PrEP rapidement ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    Oui. Conformément aux dernières recommandations SwissPrEPared (Guidance 4.0), un <strong>démarrage rapide</strong> de la PrEP est possible. Après une première consultation avec bilan sanguin et test VIH négatif, le traitement peut être initié sans délai. Contactez-nous par e-mail pour planifier votre rendez-vous.
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    7. La consultation est-elle confidentielle ?
+                    <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">
+                    Absolument. Toutes nos consultations sont soumises au <strong>secret médical</strong>. Votre démarche est strictement confidentielle. Notre équipe vous accueille dans un cadre bienveillant et sans jugement.
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+    <div class="section-inner">
+        <span class="section-label">Prendre rendez-vous</span>
+        <h2 class="section-title">Contactez-nous pour démarrer votre PrEP</h2>
+        <p>Envoyez-nous un e-mail pour planifier votre première consultation PrEP. Nous vous répondrons dans les plus brefs délais.</p>
+        <div class="contact-card">
+            <span class="email-label">Écrivez-nous à</span>
+            <a href="mailto:contact@traveldoctor.ch?subject=Demande%20de%20consultation%20PrEP" class="email-link">contact@traveldoctor.ch</a>
+            <span class="email-note">Objet suggéré : « Demande de consultation PrEP »</span>
+        </div>
+        <div class="contact-locations">
+            <div class="contact-location">
+                <h4>Lausanne</h4>
+                <p>Centre médical S-Santé<br>Rue du Valentin 32, 1004 Lausanne<br><a href="tel:+41797803200">+41 79 780 32 00</a></p>
+            </div>
+            <div class="contact-location">
+                <h4>Bulle</h4>
+                <p>Cabinet Médical La Tour<br>Route de l'Intyamon 113, 1630 Bulle<br><a href="tel:+41263206662">+41 26 320 66 62</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <a href="https://traveldoctor.ch" class="footer-logo">
+            <img src="https://traveldoctor.ch/wp-content/uploads/2025/06/Travel_Doctor_Logos_Travel-doctor-horizontal.png" alt="TravelDoctor.ch">
+        </a>
+        <div class="footer-links">
+            <a href="https://traveldoctor.ch">Accueil</a>
+            <a href="https://traveldoctor.ch/liste-prix/">Tarifs</a>
+            <a href="https://www.swissprepared.ch/fr/" target="_blank" rel="noopener">SwissPrEPared</a>
+        </div>
+        <span class="footer-copy">&copy; 2025 TravelDoctor.ch — Tous droits réservés</span>
+    </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/41797803200?text=Bonjour%20TravelDoctor%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20une%20consultation%20PrEP." class="whatsapp-float" aria-label="Contact WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        // Toggle clicked
+        if (!isOpen) item.classList.add('open');
+    });
+});
+
+// Smooth reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.stat-card, .who-card, .process-step, .faq-item, .checklist li').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
