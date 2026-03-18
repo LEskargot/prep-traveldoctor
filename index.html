@@ -24,6 +24,18 @@
             --radius: 12px;
         }
 
+        /* ─── DIVI FULL-WIDTH OVERRIDE ─── */
+        body.page, .et-boc, .et-boc > div,
+        #page-container, #main-content, #main-content .container,
+        .et_builder_inner_content,
+        article.page, article.page > .entry-content,
+        .page-template-default .entry-content {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         html { scroll-behavior: smooth; }
