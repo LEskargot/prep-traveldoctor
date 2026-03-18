@@ -36,54 +36,6 @@
             overflow-x: hidden;
         }
 
-        /* ─── HEADER ─── */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            padding: 0 2rem;
-        }
-        .header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 72px;
-        }
-        .header-logo img {
-            height: 42px;
-            width: auto;
-        }
-        .header-nav { display: flex; align-items: center; gap: 1.2rem; }
-        .header-nav a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: var(--gray-dark);
-            letter-spacing: 0.03em;
-            transition: color 0.2s;
-        }
-        .header-nav a:hover { color: var(--teal); }
-        .btn-header {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--teal);
-            color: var(--white) !important;
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            transition: background 0.25s, transform 0.2s;
-        }
-        .btn-header:hover { background: var(--teal-dark); transform: translateY(-1px); }
-
         /* ─── HERO ─── */
         .hero {
             position: relative;
@@ -582,55 +534,6 @@
         }
         .contact-location a:hover { text-decoration: underline; }
 
-        /* ─── FOOTER ─── */
-        .site-footer {
-            background: var(--gray-dark);
-            color: rgba(255,255,255,0.7);
-            padding: 3rem 2rem 2rem;
-        }
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
-        .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .footer-links a {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-links a:hover { color: var(--white); }
-        .footer-copy {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-        }
-
-        /* ─── WHATSAPP BUTTON ─── */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55); }
-        .whatsapp-float svg { width: 32px; height: 32px; color: var(--white); }
-
         /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
             .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -648,30 +551,12 @@
             .section { padding: 3rem 1.5rem; }
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .process-steps { grid-template-columns: 1fr; }
-            .header-nav .nav-text { display: none; }
             .contact-card { padding: 2rem 1.5rem; width: 100%; }
             .contact-card .email-link { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header class="site-header">
-    <div class="header-inner">
-        <a href="https://traveldoctor.ch" class="header-logo">
-            <img src="https://traveldoctor.ch/wp-content/uploads/2025/06/Travel_Doctor_Logos_Travel-doctor-horizontal.png" alt="TravelDoctor.ch">
-        </a>
-        <nav class="header-nav">
-            <a href="https://traveldoctor.ch" class="nav-text">Accueil</a>
-            <a href="#faq" class="nav-text">FAQ</a>
-            <a href="#contact" class="btn-header">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
-                Prendre RDV
-            </a>
-        </nav>
-    </div>
-</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -931,7 +816,7 @@
         <p>Envoyez-nous un e-mail pour planifier votre première consultation PrEP. Nous vous répondrons dans les plus brefs délais.</p>
         <div class="contact-card">
             <span class="email-label">Écrivez-nous à</span>
-            <a href="mailto:contact@traveldoctor.ch?subject=Demande%20de%20consultation%20PrEP" class="email-link">contact@traveldoctor.ch</a>
+            <a href="mailto:prep@traveldoctor.ch?subject=Demande%20de%20consultation%20PrEP" class="email-link">prep@traveldoctor.ch</a>
             <span class="email-note">Objet suggéré : « Demande de consultation PrEP »</span>
         </div>
         <div class="contact-locations">
@@ -947,25 +832,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="footer-inner">
-        <a href="https://traveldoctor.ch" class="footer-logo">
-            <img src="https://traveldoctor.ch/wp-content/uploads/2025/06/Travel_Doctor_Logos_Travel-doctor-horizontal.png" alt="TravelDoctor.ch">
-        </a>
-        <div class="footer-links">
-            <a href="https://traveldoctor.ch">Accueil</a>
-            <a href="https://traveldoctor.ch/liste-prix/">Tarifs</a>
-            <a href="https://www.swissprepared.ch/fr/" target="_blank" rel="noopener">SwissPrEPared</a>
-        </div>
-        <span class="footer-copy">&copy; 2025 TravelDoctor.ch — Tous droits réservés</span>
-    </div>
-</footer>
-
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/41797803200?text=Bonjour%20TravelDoctor%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20une%20consultation%20PrEP." class="whatsapp-float" aria-label="Contact WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
 
 <script>
 // FAQ Accordion
