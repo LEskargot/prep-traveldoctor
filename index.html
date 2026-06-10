@@ -25,13 +25,18 @@
         }
 
         /* ─── DIVI FULL-WIDTH OVERRIDE ─── */
-        body.page, .et-boc, .et-boc > div,
-        #page-container, #main-content, #main-content .container,
-        .et_builder_inner_content,
-        article.page, article.page > .entry-content,
-        .page-template-default .entry-content,
-        .et_pb_section, .et_pb_row, .et_pb_column,
-        .et_pb_module.et_pb_code, .et_pb_code_inner {
+        /* Scoped to #main-content so it does NOT leak into the Theme Builder
+           header/footer (which also use .et_pb_row / .et_pb_column and would
+           otherwise be forced to 100% width and stack vertically). */
+        #main-content,
+        #main-content .container,
+        #main-content .et_builder_inner_content,
+        #main-content .entry-content,
+        #main-content .et_pb_section,
+        #main-content .et_pb_row,
+        #main-content .et_pb_column,
+        #main-content .et_pb_module.et_pb_code,
+        #main-content .et_pb_code_inner {
             width: 100% !important;
             max-width: 100% !important;
             padding-left: 0 !important;
@@ -518,6 +523,27 @@
             color: var(--gray-text);
             margin-top: 0.8rem;
         }
+        .booking-wrap {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            max-width: 760px;
+            margin: 1rem auto 0;
+        }
+        .booking-wrap iframe.od-widget {
+            display: block;
+            width: 100%;
+            border: none;
+        }
+        .contact-email-intro {
+            max-width: 600px;
+            margin: 2.5rem auto 0 !important;
+            font-size: 0.98rem;
+        }
+        @media (max-width: 600px) {
+            .booking-wrap { padding: 0.75rem; }
+        }
         .contact-locations {
             display: flex;
             gap: 2.5rem;
@@ -586,8 +612,8 @@
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn-primary">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
-                    Nous contacter
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Prendre rendez-vous
                 </a>
                 <a href="#comprendre" class="btn-secondary">En savoir plus ↓</a>
             </div>
@@ -826,12 +852,17 @@
 <section class="contact-section" id="contact">
     <div class="section-inner">
         <span class="section-label">Prendre rendez-vous</span>
-        <h2 class="section-title">Contactez-nous pour démarrer votre PrEP</h2>
-        <p>Envoyez-nous un e-mail pour planifier votre première consultation PrEP. Nous vous répondrons dans les plus brefs délais.</p>
+        <h2 class="section-title">Réservez votre consultation PrEP en ligne</h2>
+        <p>Choisissez directement le créneau qui vous convient pour votre première consultation PrEP. Votre démarche reste strictement confidentielle.</p>
+        <div class="booking-wrap">
+            <!-- OneDoc booking widget -->
+            <script>var widgetConfigs=widgetConfigs||{};widgetConfigs["1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7"]={},widgetConfigs["1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7"].measurementIds=[],widgetConfigs["1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7"].hasGoogleTagTracking=!1,widgetConfigs["1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7"].hasFusedeck=!1,window.addEventListener("message",(function(e){var t=e.data["od-widget-id"],i=e.data["od-widget-height"],d=e.data["od-widget-ios"];if(t&&t in widgetConfigs&&"1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7"===t){var a=document.getElementById("od-widget-"+t);i&&(a.style.height=i+"px"),!0===d&&(a.style.width="100px",a.style["min-width"]="100%",a.scrolling="no");var g=e.data["od-tracking-configs"];void 0!==g&&(widgetConfigs[t].measurementIds=g);var o=e.data["od-has-google-tag-manager"];void 0!==o&&(widgetConfigs[t].hasGoogleTagTracking=o);var f=e.data["od-has-fusedeck"];void 0!==f&&(widgetConfigs[t].hasFusedeck=f);var n=e.data.GA4;if(widgetConfigs[t].hasGoogleTagTracking&&window.dataLayer&&n){var s=Object.keys(n.properties),r={event:n.name};s.forEach((function(e){r[e]=n.properties[e]})),dataLayer.push(r)}if(widgetConfigs[t].hasFusedeck&&window.fdData&&n){var s=Object.keys(n.properties),r={event:n.name};s.forEach((function(e){r[e]=n.properties[e]})),fdData.push(r)}if(n&&void 0!==window.gtag)for(var w=0;w<widgetConfigs[t].measurementIds.length;w++){var f=widgetConfigs[t].measurementIds[w],c=(s=Object.keys(n.properties),{send_to:f});s.forEach((function(e){c[e]=n.properties[e]})),gtag("event",n.name,c)}}})),window.addEventListener("load",(function(e){for(var t=document.querySelectorAll("iframe.od-widget"),i=0;i<t.length;i++){var d=t[i];d.dataset&&d.dataset.src&&(d.src=d.dataset.src)}}));</script><iframe class="od-widget" id="od-widget-1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7" src="about:blank" data-src="https://www.onedoc.ch/fr/widget/1a66ed66c811b9837590c84ae38e02d43ebc727b9a86bedc59f86575099264d7" frameborder="0" style="width:100%;max-width:1024px;height:400px"></iframe>
+        </div>
+        <p class="contact-email-intro">Une question avant de réserver ? Pour toute demande d'ordre général, écrivez-nous — nous vous répondrons dans les plus brefs délais.</p>
         <div class="contact-card">
-            <span class="email-label">Écrivez-nous à</span>
-            <a href="mailto:prep@traveldoctor.ch?subject=Demande%20de%20consultation%20PrEP" class="email-link">prep@traveldoctor.ch</a>
-            <span class="email-note">Objet suggéré : « Demande de consultation PrEP »</span>
+            <span class="email-label">Renseignements généraux</span>
+            <a href="mailto:prep@traveldoctor.ch?subject=Question%20PrEP" class="email-link">prep@traveldoctor.ch</a>
+            <span class="email-note">Pour prendre rendez-vous, utilisez l'outil de réservation ci-dessus.</span>
         </div>
         <div class="contact-locations">
             <div class="contact-location">
